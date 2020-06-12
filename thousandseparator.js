@@ -11,7 +11,7 @@
 
     library.thousandSeparator = function (number) {
         // Resursively format arrays:
-        if (isArray(number)) {
+        if (Array.isArray(number)) {
             return map(number, function (val) {
                 return thousandSeparator(val);
             });
@@ -35,9 +35,9 @@
                 secondpart = secondpart.replace(/(\d{3})(?=\d)/g, '$1' + ',');
                 //combine the parts
                 if (decimalpart !== undefined) {
-                    return parseFloat(firstpart + secondpart + '.' + decimalpart);
+                    return (firstpart + secondpart + '.' + decimalpart);
                 }
-                return parseInt(firstpart + secondpart);
+                return (firstpart + secondpart);
             }
         }
     }
